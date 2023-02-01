@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 
 namespace BcyWebCrawler.Core
 {
-    public class Tag
+    public class Image
     {
-        public long TagId { get; internal set; }
+        public long ImageId { get; internal set; }
 
-        public string Name { get; internal set; } = string.Empty;
-
-        public string Type { get; internal set; } = string.Empty;
+        public string FileName { get; internal set; } = string.Empty;
 
         public long PostId { get; internal set; }
 

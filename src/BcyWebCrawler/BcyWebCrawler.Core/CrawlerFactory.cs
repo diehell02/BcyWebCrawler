@@ -10,9 +10,9 @@ namespace BcyWebCrawler.Core
 {
     public static class CrawlerFactory
     {
-        public static ICrawler<Post?> GetProductCrawler()
+        public static ICrawler<Post?> GetPostCrawler()
         {
-            return CallConstructor<ProductionCrawler>();
+            return CallConstructor<PostCrawler>();
         }
 
         private static T CallConstructor<T>() where T : class

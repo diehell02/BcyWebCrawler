@@ -37,7 +37,7 @@ namespace BcyWebCrawler.Desktop
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             string link = PostLinkTextBox.Text;
-            Post? post = await CrawlerFactory.GetProductCrawler().AnanyzeAsync(link);
+            Post? post = await CrawlerFactory.GetPostCrawler().AnanyzeAsync(link);
             if (post is null)
             {
                 OutputTextBox.Text = "Crawl Failed";

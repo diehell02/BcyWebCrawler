@@ -41,6 +41,7 @@ namespace BcyWebCrawler.Desktop
 
         public async Task<string> DownloadFileAsync(string url)
         {
+            await Task.CompletedTask;
             return string.Empty;
         }
 

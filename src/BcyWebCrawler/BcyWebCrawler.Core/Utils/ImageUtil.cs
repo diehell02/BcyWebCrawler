@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Management.Automation;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
@@ -17,10 +16,24 @@ namespace BcyWebCrawler.Core.Utils
 {
     internal class ImageUtil
     {
-        private static DateTime s_lastDownLoadTime = DateTime.MinValue;
-        private static Regex s_resMediaTypeRegex = new(@"image/(\w+)");
+        private const string ASSERT = "Assert";
+        private const string IMAGES = "Images";
 
-        public static async Task<string> DownloadFileAsync(string url)
+        private static DateTime s_lastDownLoadTime = DateTime.MinValue;
+        private static readonly Regex s_resMediaTypeRegex = new(@"image/(\w+)");
+
+        private static readonly string s_imageDirectory;
+
+        static ImageUtil()
+        {
+            s_imageDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ASSERT, IMAGES);
+            if (!Directory.Exists(s_imageDirectory))
+            {
+                Directory.CreateDirectory(s_imageDirectory);
+            }
+        }
+
+        public static async Task<string> DownloadFileAsync(string url, string relativePath, string? fileName = null)
         {
             if (string.IsNullOrWhiteSpace(url))
             {
@@ -31,9 +44,10 @@ namespace BcyWebCrawler.Core.Utils
                 await Task.Delay(TimeSpan.FromSeconds(10));
             }
             s_lastDownLoadTime = DateTime.Now;
-            string fileName = $"{Guid.NewGuid()}";
-            StringBuilder filePathBuilder = new();
-            filePathBuilder.Append($"{GetImageDirectory()}\\{fileName}");
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                fileName = $"{Guid.NewGuid()}";
+            }
             using (var handler = new HttpClientHandler())
             {
                 handler.UseDefaultCredentials = true;
@@ -49,15 +63,21 @@ namespace BcyWebCrawler.Core.Utils
                             return string.Empty;
                         }
                         string? mediaType = response.Content.Headers.ContentType?.MediaType;
-                        if (!string.IsNullOrEmpty(mediaType))
+                        if (!string.IsNullOrWhiteSpace(mediaType))
                         {
                             Match match = s_resMediaTypeRegex.Match(mediaType);
                             if (match.Success)
                             {
-                                filePathBuilder.Append($".{match.Groups[1]}");
+                                fileName = $"{fileName}.{match.Groups[1]}";
                             }
                         }
-                        using (var fs = new FileStream(filePathBuilder.ToString(), FileMode.OpenOrCreate))
+                        string directory = Path.Combine(s_imageDirectory, relativePath);
+                        if (!Directory.Exists(directory))
+                        {
+                            Directory.CreateDirectory(directory);
+                        }
+                        string filePath = Path.Combine(directory, fileName);
+                        using (var fs = new FileStream(filePath, FileMode.OpenOrCreate))
                         {
                             await response.Content.CopyToAsync(fs);
                         }
@@ -65,16 +85,6 @@ namespace BcyWebCrawler.Core.Utils
                 }
             }
             return fileName;
-        }
-
-        private static string GetImageDirectory()
-        {
-            string directory = $"{AppDomain.CurrentDomain.BaseDirectory}\\Assert\\Images";
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-            return directory;
         }
     }
 }
