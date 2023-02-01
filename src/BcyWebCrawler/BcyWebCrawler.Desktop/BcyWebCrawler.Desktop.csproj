@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BcyWebCrawler.Core\BcyWebCrawler.Core.csproj" />
+    <ProjectReference Include="..\BcyWebCrawler.Core\BcyWebCrawler.Core.csproj">
+      <ReferenceSourceTarget></ReferenceSourceTarget>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

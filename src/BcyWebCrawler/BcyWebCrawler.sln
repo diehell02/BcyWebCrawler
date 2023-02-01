@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.Desktop", "Bc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.Core", "BcyWebCrawler.Core\BcyWebCrawler.Core.csproj", "{95674E54-CA94-4E5E-921A-C3C4E58EE89D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.UI", "BcyWebCrawler.UI\BcyWebCrawler.UI.csproj", "{C9DEB045-52DC-4B1A-88DC-BA9DAB54F2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.Core.UT", "BcyWebCrawler.Core.UT\BcyWebCrawler.Core.UT.csproj", "{88975037-6699-4869-86C1-1823C7078C68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{95674E54-CA94-4E5E-921A-C3C4E58EE89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95674E54-CA94-4E5E-921A-C3C4E58EE89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95674E54-CA94-4E5E-921A-C3C4E58EE89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9DEB045-52DC-4B1A-88DC-BA9DAB54F2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DEB045-52DC-4B1A-88DC-BA9DAB54F2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DEB045-52DC-4B1A-88DC-BA9DAB54F2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DEB045-52DC-4B1A-88DC-BA9DAB54F2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88975037-6699-4869-86C1-1823C7078C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88975037-6699-4869-86C1-1823C7078C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88975037-6699-4869-86C1-1823C7078C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88975037-6699-4869-86C1-1823C7078C68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
