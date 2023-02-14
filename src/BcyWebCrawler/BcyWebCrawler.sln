@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BcyWebCrawler.Core.UT", "Bc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{E936313E-DA40-4EE4-BAD9-C889A7C4660F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.UI", "BcyWebCrawler.UI\BcyWebCrawler.UI\BcyWebCrawler.UI.csproj", "{F8497905-913A-49F3-B5C6-A596529CBAFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BcyWebCrawler.UI", "BcyWebCrawler.UI\BcyWebCrawler.UI\BcyWebCrawler.UI.csproj", "{F8497905-913A-49F3-B5C6-A596529CBAFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.UI.Skia.Gtk", "BcyWebCrawler.UI\BcyWebCrawler.UI.Skia.Gtk\BcyWebCrawler.UI.Skia.Gtk.csproj", "{077A90D0-C813-4948-A85C-1FAE047ED38D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BcyWebCrawler.UI.Skia.Gtk", "BcyWebCrawler.UI\BcyWebCrawler.UI.Skia.Gtk\BcyWebCrawler.UI.Skia.Gtk.csproj", "{077A90D0-C813-4948-A85C-1FAE047ED38D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.UI.Windows", "BcyWebCrawler.UI\BcyWebCrawler.UI.Windows\BcyWebCrawler.UI.Windows.csproj", "{6733208F-947B-4E43-A689-52E6E5CCE40B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BcyWebCrawler.UI.Windows", "BcyWebCrawler.UI\BcyWebCrawler.UI.Windows\BcyWebCrawler.UI.Windows.csproj", "{6733208F-947B-4E43-A689-52E6E5CCE40B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BcyWebCrawler.UI.Skia.Wpf", "BcyWebCrawler.UI\BcyWebCrawler.UI.Skia.Wpf\BcyWebCrawler.UI.Skia.Wpf.csproj", "{8B1AF191-93DC-4F1C-8AD7-6276C0D39E56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BcyWebCrawler.UI.Skia.Wpf", "BcyWebCrawler.UI\BcyWebCrawler.UI.Skia.Wpf\BcyWebCrawler.UI.Skia.Wpf.csproj", "{8B1AF191-93DC-4F1C-8AD7-6276C0D39E56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

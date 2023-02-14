@@ -21,9 +21,9 @@
     </Page.Resources>
     <Grid>
         <local:WebLoader x:Name="WebView2Loader"
-                         Visibility="Collapsed"
+                         Visibility="Visible"
                          Loaded="WebView2Loader_Loaded"/>
-        <Grid>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
