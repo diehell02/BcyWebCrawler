@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "BcyWebCrawler.UI.Windows": {
-      "commandName": "MsixPackage"
-    }
-  }
-}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BcyWebCrawler.MAUI"
+             x:Class="BcyWebCrawler.MAUI.MainPage">
+    <ContentPage.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style x:Key="EditorStyle" TargetType="Editor">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <local:WebLoader x:Name="WebView2Loader"
+                         IsVisible="False"
+                         Loaded="WebView2Loader_Loaded"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical"
+                         Grid.Row="0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource LabelStyle}" WidthRequest="100" Text="Post link:" />
+                    <Editor Style="{StaticResource EditorStyle}" x:Name="PostLinkTextBox" WidthRequest="500" />
+                    <Button Style="{StaticResource ButtonStyle}" Text="Crawl" Clicked="Button_Clicked" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Style="{StaticResource LabelStyle}" WidthRequest="100" Text="Web link:" />
+                    <Editor Style="{StaticResource EditorStyle}" x:Name="WebLinkTextBox" WidthRequest="500" />
+                    <Button Style="{StaticResource ButtonStyle}" Text="GetHTML" Clicked="Button_Clicked_1" />
+                    <Button Style="{StaticResource ButtonStyle}" Text="ScrollToEnd" Clicked="Button_Clicked_2" />
+                </StackLayout>
+            </StackLayout>
+            <Editor Grid.Row="1" IsReadOnly="True"
+                    Margin="5" x:Name="OutputTextBox"/>
+        </Grid>
+    </Grid>
+</ContentPage>
