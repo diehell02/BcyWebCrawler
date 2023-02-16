@@ -15,11 +15,9 @@
         </Style>
     </ContentPage.Resources>
     <Grid>
-        <local:WebLoader x:Name="WebView2Loader"
-                         IsVisible="False"
-                         Loaded="WebView2Loader_Loaded"/>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
@@ -37,7 +35,10 @@
                     <Button Style="{StaticResource ButtonStyle}" Text="ScrollToEnd" Clicked="Button_Clicked_2" />
                 </StackLayout>
             </StackLayout>
-            <Editor Grid.Row="1" IsReadOnly="True"
+            <local:WebLoader x:Name="WebView2Loader"
+                             Loaded="WebView2Loader_Loaded"
+                             Grid.Row="1"/>
+            <Editor Grid.Row="2" IsReadOnly="True"
                     Margin="5" x:Name="OutputTextBox"/>
         </Grid>
     </Grid>
